@@ -93,12 +93,14 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                     
                     {/* Color and Size Selection */}  
                     <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">  
+                        {/* Color Selection */}  
                         <div className="flex">  
-                            <span className="mr-3">Color</span>  
-                            {['#744c1d', '#d2aa33', '#000000'].map(color => (  
-                                <button key={color} className={`border-2 border-gray-300 ml-1 bg-[${color}] rounded-full w-6 h-6 focus:outline-none`} />  
-                            ))}  
-                        </div>  
+                                    <span className="mr-3">Color</span>  
+                                    <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none" />  
+                                    <button className="border-2 border-gray-300 ml-1 bg-[#744c1d] rounded-full w-6 h-6 focus:outline-none" />  
+                                    <button className="border-2 border-gray-400 ml-1 bg-[#d2aa33] rounded-full w-6 h-6 focus:outline-none" />  
+                                    <button className="border-2 border-gray-400 ml-1 bg-black rounded-full w-6 h-6 focus:outline-none" />  
+                                </div> 
                         <div className="flex ml-6 items-center">  
                             <span className="mr-3">Size</span>  
                             <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">  
@@ -110,24 +112,23 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                     </div>  
 
                     {/* Price and Buttons */}  
-                    <div className="flex flex-col md:flex-row gap-3 lg:gap-5">  
-                        <span className="title-font font-medium text-2xl text-gray-900"> Rs.{product.price} </span>                            
+                <div className="flex flex-col md:flex-row gap-3 lg:gap-5">  
+                    <span className="title-font font-medium text-2xl text-gray-900"> ${product.price} </span>                            
                         <div className='flex mb-1 md:mb-2 gap-3 lg:gap-5'>   
                            <Link href='/cart'>
                          <Button ><FaCartShopping className='hover:bg-black/60 hover:animate-pulse'/>   
                                 Add to Cart</Button> 
                           </Link> 
-                          <Link href='/checkout'></Link>
+                          <Link href='/checkout'>
                         <Button><FaHeart className='hover:bg-black/60 hover:animate-pulse'/>   
-                                Shop Now</Button>  
+                                Shop Now</Button> 
+                                 </Link>
                         </div>  
-                    </div>  
-
+                      </div>                     
                     
-                    
-                </div>  
+                  </div>  
                 </div> 
-            </div>  
+              </div>  
             </div> 
     );  
 };  
