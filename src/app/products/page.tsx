@@ -16,6 +16,7 @@ export default async function Products() {
     image: string; 
     description: string;  
     price: number ;
+    quantity: number;
 } 
      
     const query = `*[_type == "product"]{  

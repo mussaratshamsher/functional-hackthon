@@ -22,7 +22,18 @@ const formSchema = z.object({
         message: "UserName must be at least 3 characters"  
     }).max(20, {  
         message: "Write a maximum of 20 characters"  
-    })    
+    }) ,   
+    email: z.string().email(),
+    subject: z.string().min(5, {
+     message: "Subject must be atleast 5"
+    }).max(20, {
+      message: "Subject must not exceed from 20-characters!"  
+    }),
+    message: z.string().min(20, {
+        message: "Use 20words atleast!"
+    }).max(200, {
+        message: "You can use maximum 200 words"
+    })
 })  
 
 type FormType = z.infer<typeof formSchema>  
@@ -30,9 +41,6 @@ type FormType = z.infer<typeof formSchema>
 export default function ContactForm() {  
     const form = useForm<FormType>({  
         resolver: zodResolver(formSchema),  
-        defaultValues: {  
-            userName: "Mussarat",  
-        }  
     })  
 
     function onSubmit(values: FormType) {   
@@ -50,16 +58,52 @@ export default function ContactForm() {
                             <FormItem>  
                                 <FormLabel>Username</FormLabel>  
                                 <FormControl>  
-                                    <Input placeholder="Name here" {...field} />  
-                                </FormControl>  
-                                <FormDescription>  
-                                    
-                                </FormDescription>  
+                                    <Input className='border border-[#a9820f]' placeholder="Name here" {...field} />  
+                                </FormControl>   
                                 <FormMessage />  
                             </FormItem>  
                         )}  
                     />  
-                    <Button type="submit">Submit</Button>  
+                    <FormField  
+                        control={form.control}  
+                        name="email"  // Match the schema name here  
+                        render={({ field }) => (  
+                            <FormItem>  
+                                <FormLabel>E-mail</FormLabel>  
+                                <FormControl>  
+                                    <Input className='border border-[#a9820f]' placeholder="email@furniro.com" {...field} />  
+                                </FormControl>   
+                                <FormMessage />  
+                            </FormItem>  
+                        )}  
+                    /> 
+                    <FormField  
+                        control={form.control}  
+                        name="subject"  // Match the schema name here  
+                        render={({ field }) => (  
+                            <FormItem>  
+                                <FormLabel>Subject</FormLabel>  
+                                <FormControl>  
+                                    <Input className='border border-[#a9820f]' placeholder="Subject here" {...field} />  
+                                </FormControl>   
+                                <FormMessage />  
+                            </FormItem>  
+                        )}  
+                    /> 
+                      <FormField  
+                        control={form.control}  
+                        name="message"  // Match the schema name here  
+                        render={({ field }) => (  
+                            <FormItem>  
+                                <FormLabel>Message</FormLabel>  
+                                <FormControl>  
+                                    <Input className='border border-[#a9820f]' placeholder="Your message here" {...field} />  
+                                </FormControl>   
+                                <FormMessage />  
+                            </FormItem>  
+                        )}  
+                    /> 
+                    <Button className='bg-[#a9820f] hover:bg-[#c7a53f] duration-300 font-semibold' type="submit">Submit</Button>  
                 </form>  
             </Form>  
         </div>  

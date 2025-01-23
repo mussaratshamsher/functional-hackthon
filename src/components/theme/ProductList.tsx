@@ -15,6 +15,7 @@ interface Product {
   image: string; 
   description: string;  
   price: number ;
+  quantity: number;
 } 
 
 export default function ProductList( {Data}: {Data: Product[]}) {
@@ -47,10 +48,10 @@ export default function ProductList( {Data}: {Data: Product[]}) {
              <p className='font-medium text-sm lg:font-bold'>${product.price}</p>  
              </Link> 
              <div className='grid gap-1 md:flex md:justify-evenly mb-1 md:mb-2'> 
-        {/* <Link href='/cart'> */}
+        <Link href='/cart'>
              <Button onClick={ () => handleClick(product)}><FaCartShopping className='hover:bg-black/60 hover:animate-pulse'/> Add to Cart
              </Button>
-
+         </Link>
             
        <Button><FaHeart className='hover:bg-black/60 hover:animate-pulse'/> Shop Now</Button> 
                </div>

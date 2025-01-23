@@ -1,137 +1,149 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { Button } from "@/components/ui/button";
 
 interface CartItem {
-  id: number;
-  image: string;
+  id: string;
   name: string;
-  price: number;
+  image: string | null;
+  price: number | null;
   quantity: number;
 }
 
-const Cart = () => {
-
+export default function CartPage() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [total, setTotal] = useState<number>(0);
 
-  //--=== GETTING VALUE FROM LOCALSTORAGE ===--//
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    setCartItems(cart);
+    const cartData = localStorage.getItem("cart");
+    if (cartData) {
+      try {
+        const parsedCart: Record<string, CartItem> = JSON.parse(cartData);
+        const validItems = Object.values(parsedCart).filter(
+          (item) => item && item.image && item.price !== null
+        );
+        setCartItems(validItems);
+        calculateTotal(validItems);
+      } catch (error) {
+        console.error("Error parsing cart data:", error);
+        setCartItems([]);
+      }
+    }
   }, []);
 
-  //--=== UPDATE LOCAL STORAGE AND DISPATCH EVENT ===--//
-  const updateLocalStorage = (updatedCart: CartItem[]) => {
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    setCartItems(updatedCart);
-    window.dispatchEvent(new CustomEvent('cartUpdated')); // Real-time cart update
+  const calculateTotal = (items: CartItem[]) => {
+    const totalPrice = items.reduce(
+      (acc, item) => acc + (item.price || 0) * (item.quantity || 1),
+      0
+    );
+    setTotal(totalPrice);
   };
 
-  //--=== QUANTITY INCREMENT & DECREMENT ===--//
-  const updateQuantity = (id: number, increment: boolean) => {
+  const updateQuantity = (id: string, increase: boolean) => {
     const updatedCart = cartItems.map((item) =>
       item.id === id
-        ? { ...item, quantity: item.quantity + (increment ? 1 : -1) }
+        ? { ...item, quantity: increase ? item.quantity + 1 : Math.max(1, item.quantity - 1) }
         : item
-    ).filter((item) => item.quantity > 0);
-
-    updateLocalStorage(updatedCart);
+    );
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(Object.fromEntries(updatedCart.map(item => [item.id, item]))));
+    calculateTotal(updatedCart);
   };
 
-  //--=== REMOVE ITEM FROM CART ===--//
-  const removeItem = (id: number) => {
+  const removeItem = (id: string) => {
     const updatedCart = cartItems.filter((item) => item.id !== id);
-    updateLocalStorage(updatedCart);
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(Object.fromEntries(updatedCart.map(item => [item.id, item]))));
+    calculateTotal(updatedCart);
   };
 
-  //--=== TOTAL AMOUNT ===--//
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  
   return (
     <div>
-
       <div className="flex justify-center items-center px-[20px] sm:px-[0] py-[30px] lg:py[0] h-auto w-[100%]">
-
         {/*----===== CART =====----*/}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
           {/*----===== PRODUCTS =====----*/}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Bag</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Cart 
+            <hr className='border-[#bc9729] border-2 w-14'/></h2>
             <div className="space-y-6">
+              {cartItems.length > 0 ? (
+                cartItems.map((item) => (
+                  <div key={item.id} className="flex items-start border-b border-gray-200 pb-6" data-aos="zoom-in">
+                    {/*----===== IMAGE =====----*/}
+                    <div className="w-24 h-[150px] flex-shrink-0">
+                      {item.image ? (
+                        <Image
+                          src={urlFor(item.image).url()}
+                          alt={item.name || "Product Image"}
+                          width={100}
+                          height={100}
+                          className="rounded-md h-[150px]"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-200 rounded-md">
+                          <span className="text-gray-500 text-xs">No Image</span>
+                        </div>
+                      )}
+                    </div>
 
-              {cartItems.map((item) => (
-                <div key={item.id} className="flex items-start border-b border-gray-200 pb-6">
-
-                  {/*----===== IMAGE =====----*/}
-                  <div className="w-24 h-[150px] flex-shrink-0">
-                    <Image src={item.image} alt={item.name} width={100} height={100} className="rounded-md h-[150px]"/>
-                  </div>
-
-                  {/*----===== QUANTITY & NAME =====----*/}
-                  <div className="flex-1 px-4">
-                    <h3 className="text-[12px] sm:text-lg font-medium text-gray-800">{item.name}</h3>
-                    <div className="mb-[10px]">
-                      <div className="text-sm text-gray-500 flex gap-[5px]">
-                        <p>Quantity:</p>
-                        <div className="flex gap-[5px]">
-                          <p className="cursor-pointer mt-[-2px] text-[25px]" onClick={() => updateQuantity(item.id, false)}>-</p>
-                          <p>{item.quantity}</p>
-                          <p className="cursor-pointer text-[15px]" onClick={() => updateQuantity(item.id, true)}>+</p>
+                    {/*----===== QUANTITY & NAME =====----*/}
+                    <div className="flex-1 px-4">
+                      <h3 className="text-[12px] sm:text-lg font-medium text-gray-800">{item.name}</h3>
+                      <div className="mb-[10px]">
+                        <div className="text-sm text-gray-500 flex gap-[5px]">
+                          <p>Quantity:</p>
+                          <div className="flex gap-[5px]">
+                            <p className="cursor-pointer mt-[-2px] text-[25px]" onClick={() => updateQuantity(item.id, false)}>-</p>
+                            <p>{item.quantity}</p>
+                            <p className="cursor-pointer text-[15px]" onClick={() => updateQuantity(item.id, true)}>+</p>
+                          </div>
                         </div>
                       </div>
+                      <div className="flex gap-[10px] text-gray-600">
+                        <i className="bx bx-trash cursor-pointer" onClick={() => removeItem(item.id)}></i>
+                      </div>
                     </div>
-                    <div className="flex gap-[10px] text-gray-600">
-                      <i className="bx bx-trash cursor-pointer" onClick={() => removeItem(item.id)}></i>
+
+                    {/*----===== PRICE =====----*/}
+                    <div className="text-right">
+                      <p className="text-[10px] sm:text-sm font-medium text-gray-800">${item.price?.toFixed(2)}</p>
                     </div>
                   </div>
-
-                  {/*----===== PRICE =====----*/}
-                  <div className="text-right">
-                    <p className="text-[10px] sm:text-sm font-medium text-gray-800">${item.price}</p>
-                  </div>
-
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-gray-600 text-center">Your cart is empty.</p>
+              )}
             </div>
           </div>
 
           {/*----===== TOTAL SUMMARY =====----*/}
           <div className="p-6">
-
-            {/*----===== SUMMARY =====----*/}
-            <h3 className="text-xl font-semibold text-gray-800 mb-4" data-aos="fade-right">Summary</h3>
-            <div className="space-y-4" data-aos="zoom-in">
-
-              {/*----===== SUBTOTAL =====----*/}
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Summary
+            <hr className='border-[#bc9729] border-2 w-24 '/> </h3>
+            <div className="space-y-4">
               <div className="flex justify-between text-sm text-gray-600">
                 <p>Subtotal</p>
-                <p>${total}</p>
+                <p>${total.toFixed(2)}</p>
               </div>
-
-              {/*----===== DELIVERY =====----*/}
               <div className="flex flex-col justify-between text-sm text-gray-600">
                 <p>Estimated Delivery & Handling</p>
                 <p>Free</p>
               </div>
-
-              {/*----===== TOTAL BILL =====----*/}
               <div className="border-t border-gray-200 pt-4 flex justify-between text-lg font-medium text-gray-800">
                 <p>Total</p>
-                <p>${total}</p>
+                <p>${total.toFixed(2)}</p>
               </div>
             </div>
-
-            {/*----===== CHECKOUT BUTTON =====----*/}
-            <button className="mt-6 w-full bg-black text-white text-center py-3 rounded-full font-medium">Checkout</button>
+            <Button className="w-60 p-5 my-5 font-semibold border bg-[#bc9729] hover:bg-[#d8b447] text-white ">
+               Checkout
+            </Button>
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
-};
-
-export default Cart;
+}
