@@ -1,0 +1,89 @@
+
+STEP 3:
+APIs Structure
+
+1. Shop Items Fetch API
+Endpoint Name: /products
+Method: GET
+Purpose: Fetch ALL available products from Sanity.
+2. Endpoint Name: /orders
+Method: POST
+Purpose: Create new order in sanity.
+
+3.  API
+Endpoint Name: /shipment
+Method: GET
+Purpose: Track order status via third-party API
+
+Sanity Schema Example for Product
+===============================> 
+
+
+
+export default {
+  name: "product",
+  type: "document",
+  title: "Product",
+  fields: [
+    {
+      name: "name",
+      type: "string",
+      title: "Product Name", 
+    },
+    {
+      name: "price",
+      type: "number",
+      title: "Price", 
+    },
+    {
+      name: "description",
+      type: "text",
+      title: "Description",
+    },
+    {
+      name: "category",
+      type: "string",
+      title: "Category", 
+    },
+    {
+      name: "image",
+      type: "image",
+      title: "Image", 
+    },
+  ],
+};
+
+
+4. Documentation Structure
+===============================>
+
+[Frontend: Next.js]
+      |
+  [Sanity CMS]
+      |
+------------------------------
+|               |            |
+Product Data   Payment    Shipment
+ API          Gateway       API
+ 
+
+5. Workflow Diagrams
+
+Product Workflow
+=================>
+[User] --> [Frontend: Shop Page] --> [API] --> [Sanity CMS]
+
+Cart Workflow
+=================>
+[User] --> [Frontend: Cart Page] --> [API] --> [Sanity CMS]
+
+Payment Workflow
+=================>
+[User] --> [Frontend: Payment] --> [API] --> [Sanity CMS]
+
+Purpose of Documentation
+============================>
+
+Clear Understanding: Ensures all team members know how the system works.
+Future Reference: Useful when the system needs to be expanded or updated.
+Error Handling: Helps identify and resolve errors by reviewing the architecture and workflows.
