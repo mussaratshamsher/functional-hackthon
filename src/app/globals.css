@@ -110,3 +110,28 @@ body {
   box-shadow: 0 0 5px rgba(184, 143, 20, 0.5), 0 0 10px rgba(184, 143, 20, 0.75), 0 0 15px rgba(184, 143, 20, 1), 0 0 20px rgba(184, 143, 20, 1); /* Glowing effect */  
   z-index: -1; /* Place the shadow behind the content */  
 }
+
+/* styles/globals.css */  
+
+/* WebKit browsers (Chrome, Safari) */  
+::-webkit-scrollbar {  
+  width: 12px; /* Width of the scrollbar */  
+}  
+
+::-webkit-scrollbar-track {  
+  background: #f4dec6; /* Background of the scrollbar track */  
+}  
+
+::-webkit-scrollbar-thumb {  
+  background: #91761c; /* Scrollbar color */  
+  border-radius: 10px; /* Rounded edges */  
+}  
+
+::-webkit-scrollbar-thumb:hover {  
+  background: #f4dec6; /* Color when hovered */  
+}  
+
+/* Firefox */  
+html {  
+  scrollbar-color: #91761c #f4dec6; /* Thumb color and track color */  
+}

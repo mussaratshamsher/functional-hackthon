@@ -75,7 +75,7 @@ export default function BrowseRange() {
     <div className='max-w-[1440px] mb-2 md:mb-5 container mx-auto'>
 
       <h1 className='text-center text-xl md:text-2xl lg:text-3xl font-extrabold mt-2 md:mt-5 lg:mt-10'>Browse the Range
-      <hr className='border-[#bc9729] border-2 w-80 mx-auto'/></h1>
+      <hr className='border-[#bc9729] border-2 w-60 lg:w-80 mx-auto'/></h1>
       <h2 className='text-[#b88f14] text-center md:text-lg lg:text-xl mt-5'>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quos dolore doloribus. </h2>
 
