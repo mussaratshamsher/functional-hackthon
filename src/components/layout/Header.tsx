@@ -23,13 +23,13 @@ export default function Header() {
     <li className='hover:text-[#b88f14] hover:underline'><Link href='/products'>Shop</Link></li>
     <li className='hover:text-[#b88f14] hover:underline'><Link href='/about'>About</Link></li>
     <li className='hover:text-[#b88f14] hover:underline'><Link href='/contact'>Contact</Link></li>
-</div>
+     </div>
 
-<div className='flex py-5 w-28 gap-2 px-2 md:-mt-2 glowing-border'>
+     <div className='flex py-5 w-28 gap-2 px-2 md:-mt-2 glowing-border'>
     <Link href='/admin' className='-mt-3 hover:text-[#b3853b] text-black'><User/></Link>
-    <Link href='/admin' className='-mt-3 hover:text-[#b3853b] text-black'> <Heart/></Link>
+    <Link href='/wishlist' className='-mt-3 hover:text-[#b3853b] text-black'> <Heart/></Link>
     <Link href='/cart' className='-mt-3 hover:text-[#b3853b] text-black'><ShoppingCart/></Link>
-</div>
+     </div>
 
 <Sheet >
   <SheetTrigger className=' md:hidden'><Logs /></SheetTrigger>
@@ -38,7 +38,8 @@ export default function Header() {
   <li><Link href='/' className='hover:underline'>Home</Link> </li>
   <li><Link href='/products' className='hover:underline'>Shop</Link></li>
   <li><Link href='/about' className='hover:underline'>About</Link></li>
-  <li><Link href='/contact' className='hover:underline'>Contact</Link></li></ul>
+  <li><Link href='/contact' className='hover:underline'>Contact</Link></li>
+  </ul>
   </SheetContent>
 </Sheet>
 

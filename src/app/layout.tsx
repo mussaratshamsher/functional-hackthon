@@ -17,11 +17,12 @@ const geistMono = localFont({
 
 
 export const metadata: Metadata = {
-  icons: {  
-    icon: "/images/logo.png",   
-  },
+  
   title: "Furniro",
   description: "Elegant, Stylish Décor, Trendy Designs, Handcrafted Quality, Premium Materials, Customizable Options, Affordable Luxury, Eco-Friendly Choices",
+  icons: {  
+    icon:"/images/logo.png",   
+  },
 };
 
 export default function RootLayout({
