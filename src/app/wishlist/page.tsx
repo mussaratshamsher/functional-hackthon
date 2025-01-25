@@ -14,7 +14,7 @@ interface WishlistItem {
   quantity?: number;  
 }  
 
-export default function WishlistPage() {  
+export default function Wishlist() {  
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]);  
 
   useEffect(() => {  
