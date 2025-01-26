@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import {  
   Form,  
   FormControl,  
-  FormDescription,  
   FormField,  
   FormItem,  
   FormLabel,  
@@ -18,18 +17,19 @@ import {
 import { Input } from "@/components/ui/input"  
 
 const formSchema = z.object({  
-       userName: z.string().min(3, {  
+       userName: z.string().min(3, {  //1
         message: "UserName must be at least 3 characters"  
     }).max(20, {  
         message: "Write a maximum of 20 characters"  
     }) ,   
-    email: z.string().email(),
-    subject: z.string().min(5, {
+    email: z.string().email(),      //2
+
+    subject: z.string().min(5, {    //3
      message: "Subject must be atleast 5"
     }).max(20, {
       message: "Subject must not exceed from 20-characters!"  
     }),
-    message: z.string().min(20, {
+    message: z.string().min(20, {   //4
         message: "Use 20words atleast!"
     }).max(200, {
         message: "You can use maximum 200 words"

@@ -104,10 +104,10 @@ body {
   left: -5px; 
   right: -5px;   
   bottom: -5px; 
-  border-radius: 8px;  
+  border-radius: 10px; 
   border: 2px solid transparent;  
   animation: borderMove 3s linear infinite; 
-  box-shadow: 0 0 5px rgba(184, 143, 20, 0.5), 0 0 10px rgba(184, 143, 20, 0.75), 0 0 15px rgba(184, 143, 20, 1), 0 0 20px rgba(184, 143, 20, 1); /* Glowing effect */  
+  box-shadow: 0 0 5px rgba(184, 143, 20, 0.75), 0 0 10px rgba(184, 143, 20, 1); /* Glowing effect */  
   z-index: -1; /* Place the shadow behind the content */  
 }
 

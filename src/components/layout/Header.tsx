@@ -10,7 +10,7 @@ import ModeToggle from '../theme/ModeToggle'
 export default function Header() {
   return (
     <div  className='max-w-[1440px] container mx-auto'>
-    <div className='w-full h-20 flex justify-between md:justify-around py-5 md:p-10'>
+    <header className='w-full h-20 flex justify-between md:justify-around py-5 md:p-10'>
 
    <div className='flex md:-mt-3 gap-2 hover:animate-pulse'>
    <Image src={logo}
@@ -46,7 +46,7 @@ export default function Header() {
 </Sheet>
 
 
-</div>
+</header>
     </div>
   )
 }
