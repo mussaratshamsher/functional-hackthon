@@ -51,16 +51,16 @@ export default function Designs({ designsData }: DesignsProps) {
                 <div className='grid2 slider md:ml-20 lg:ml-0 pr-5'>  
                     <Slider {...settings}>  
                         <div>  
-                            <Image src={urlFor(designsData.image1).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96' />  
+                            <Image src={urlFor(designsData.image1).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96 mx-auto md:mx-0'/>  
                         </div>  
                         <div>  
-                            <Image src={urlFor(designsData.image2).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96' />  
+                            <Image src={urlFor(designsData.image2).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96 mx-auto md:mx-0'/>  
                         </div>  
                         <div>  
-                            <Image src={urlFor(designsData.image3).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96' />  
+                            <Image src={urlFor(designsData.image3).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96 mx-auto md:mx-0' />  
                         </div>  
                         <div>  
-                            <Image src={urlFor(designsData.image4).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96' />  
+                            <Image src={urlFor(designsData.image4).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96 mx-auto md:mx-0' />  
                         </div>  
                     </Slider>  
                 </div>  

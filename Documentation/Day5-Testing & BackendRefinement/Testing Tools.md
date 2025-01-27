@@ -10,8 +10,9 @@ https://pagespeed.web.dev/analysis/https-functional-hackthon-vercel-app/k151mbuq
 https://pagespeed.web.dev/analysis/https-functional-hackthon-vercel-app/k151mbuq6m?hl=en-US&form_factor=mobile
 
 
+# App's component & functionality testing via ZAP
 
-
+[furniro.csv] []
 
 
 

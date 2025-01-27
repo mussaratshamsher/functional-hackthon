@@ -9,7 +9,7 @@ import React from 'react'
 export default async function about() {
 
     const aboutQuery = `*[_type == "about"]{ title,
-    video, para, buttonText}`;
+  para, buttonText}`;
   
        const sanityData = await client.fetch(aboutQuery)
        const[aboutData] = sanityData;
@@ -33,15 +33,12 @@ export default async function about() {
 
 <div className='grid md:grid-cols-2 max-w-screen-lg md:gap-5 lg:gap-10 mx-auto'>
   
-<video src="/videos/furniture.mp4" controls className='h-72 m-5 my-10'>
+<video src="/videos/furniture.mp4" controls className='w-[350px] h-72'>
 Your browser does not support video
 </video>  
 
 <p className='flex justify-center hyphens-none whitespace-break-spaces p-5 mx-auto'> {aboutData.para}
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa libero soluta obcaecati quaerat nesciunt pariatur provident totam vitae quod maxime non, natus doloremque veritatis, cupiditate odit sit velit quidem consequuntur
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consectetur odit numquam suscipit, modi molestias excepturi saepe inventore dolorum veritatis, doloremque impedit debitis hic reiciendis esse sed, velit sequi aliquid.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem amet eos minus laudantium, similique impedit praesentium excepturi, velit ab deleniti nihil dicta nisi, enim sed. Aliquid deserunt veniam repellat quos
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque excepturi iusto, est officiis sed laborum ipsam alias officia aperiam quasi rem esse perspiciatis placeat perferendis, quam dolore deserunt voluptatibus dolor
+{aboutData.para}
 </p>
   </div>
 
