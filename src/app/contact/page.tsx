@@ -5,19 +5,16 @@ import React from 'react'
 
 export default function Contact() {
 
-
-
   return (
-    <div className='container mx-auto max-w-[1440px]'>
+    <div className='container max-w-[1440px] mx-auto'>
 
       {/* Header */}  
       <div className='bg-[#f4dec6] w-full h-24 text-center py-7'>  
             <h1 className='text-xl lg:text-3xl'>Furniro</h1>  
             <p className='flex justify-center'> 
 
-            <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight/> </b>
-            <span className='text-gray-700'><Link href='/contact'> Contact </Link></span>  
-            </p>  
+       <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight/> </b>
+     <span className='text-gray-700'><Link href='/contact'> Contact </Link></span></p>  
         </div> 
  <h1 className='font-bold text-2xl text-center p-2 md:p-5'>Get In Touch
  <hr className='border-[#bc9729] border-2 w-60 mx-auto'/></h1>

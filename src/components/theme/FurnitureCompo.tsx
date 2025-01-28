@@ -14,7 +14,7 @@ export default async function FurnitureCompo() {
     const [furnitureData] = sanityData;  
 
     return (  
-        <div className='max-w-[1440px] container mx-auto'>  
+        <div className='container max-w-[1440px]mx-auto'>  
             <p className='text-center'>Share your steps with</p>  
             <h1 className='text-center font-bold text-2xl lg:text-4xl'>#{furnitureData.title}
             <hr className='border-[#bc9729] border-2 w-60 mx-auto'/></h1>  

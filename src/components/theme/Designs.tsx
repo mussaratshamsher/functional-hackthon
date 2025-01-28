@@ -37,7 +37,7 @@ export default function Designs({ designsData }: DesignsProps) {
     };  
 
     return (  
-        <div className='max-w-[1440px] container mx-auto'>   
+        <div className='container max-w-[1440px] mx-auto'>   
             <div className='bg-[#f4dec6] h-auto grid grid-cols-1 md:grid-cols-3 px-5 py-10'>  
                 <div className='grid1 md:col-span-2 mt-2 md:mt-32 lg:mt-0 px-10 lg:pt-20'>  
                     <h1 className='font-semibold lg:font-extrabold font-xl md:text-2xl lg:text-5xl lg:mt-10 text-center md:text-start'>
