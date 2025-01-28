@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";  
 import { urlFor } from "@/sanity/lib/image";  
 import { Button } from "@/components/ui/button";  
-import Link from "next/link";
+import Link from "next/link";  
 
 interface WishlistItem {  
   id: string;  
   name: string;  
   image: string | null;  
   price: number | null;  
-  quantity?: number;  
+  quantity: number;  
 }  
 
 export default function Wishlist() {  
@@ -19,13 +19,10 @@ export default function Wishlist() {
 
   useEffect(() => {  
     const wishlistData = localStorage.getItem("wishlist");  
-    console.log("Wishlist Data from Local Storage:", wishlistData);  // Debug line  
     if (wishlistData) {  
       try {  
         const parsedWishlist: Record<string, WishlistItem> = JSON.parse(wishlistData);  
-        console.log("Parsed Wishlist:", parsedWishlist);  // Debug line  
         const validItems = Object.values(parsedWishlist).filter((item) => item && item.image && item.price !== null);  
-        console.log("Valid Wishlist Items:", validItems); // Debug line  
         setWishlistItems(validItems);  
       } catch (error) {  
         console.error("Error parsing wishlist data:", error);  
@@ -38,14 +35,27 @@ export default function Wishlist() {
     const existingCartData = localStorage.getItem("cart");  
     const cartItems: Record<string, WishlistItem> = existingCartData ? JSON.parse(existingCartData) : {};  
     
-    if (!cartItems[item.id]) {  
-      cartItems[item.id] = { ...item, quantity: 1 }; // Now quantity is part of item  
-      localStorage.setItem("cart", JSON.stringify(cartItems));  
+    if (cartItems[item.id]) {  
+      // Increment quantity if item already exists in cart  
+      cartItems[item.id].quantity += 1;  
+    } else {  
+      cartItems[item.id] = { ...item, quantity: 1 }; // Initialize item quantity to 1  
     }  
+    localStorage.setItem("cart", JSON.stringify(cartItems));  
   };  
 
   const removeItem = (id: string) => {  
     const updatedWishlist = wishlistItems.filter((item) => item.id !== id);  
+    setWishlistItems(updatedWishlist);  
+    localStorage.setItem("wishlist", JSON.stringify(Object.fromEntries(updatedWishlist.map(item => [item.id, item]))));  
+  };  
+
+  const updateQuantity = (id: string, increase: boolean) => {  
+    const updatedWishlist = wishlistItems.map((item) =>  
+      item.id === id  
+        ? { ...item, quantity: increase ? item.quantity + 1 : Math.max(1, item.quantity - 1) }  
+        : item  
+    );  
     setWishlistItems(updatedWishlist);  
     localStorage.setItem("wishlist", JSON.stringify(Object.fromEntries(updatedWishlist.map(item => [item.id, item]))));  
   };  
@@ -56,7 +66,8 @@ export default function Wishlist() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">  
           <div className="lg:col-span-2">  
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Wishlist   
-            <hr className='border-[#bc9729] border-2 w-24 '/></h2>  
+              <hr className='border-[#bc9729] border-2 w-24 '/>  
+            </h2>  
             <div className="space-y-6">  
               {wishlistItems.length > 0 ? (  
                 wishlistItems.map((item) => (  
@@ -77,12 +88,24 @@ export default function Wishlist() {
                     <div className="flex-1 px-4">  
                       <h3 className="text-[12px] sm:text-lg font-medium text-gray-800">{item.name}</h3>  
                       <div className="flex gap-2 mt-2">  
-                       
-                      <Link href='/cart'>  <Button onClick={() => {addToCart(item);}} >  
-                          Add to Cart </Button> </Link>  
-                       <Button className="text-white bg-red-600 hover:bg-red-500"  
-                          onClick={() => removeItem(item.id)} >  
-                          Remove </Button> 
+                        <Link href='/cart'>  
+                          <Button onClick={() => { addToCart(item); }}>Add to Cart</Button>  
+                        </Link>  
+                        <Button   
+                          className="text-white bg-red-600 hover:bg-red-500"  
+                          onClick={() => removeItem(item.id)}>  
+                          Remove  
+                        </Button>   
+                      </div>  
+                      <div className="flex gap-2 mt-2">  
+                        <p>Quantity:</p>  
+                        <button   
+                          className="text-lg"   
+                          onClick={() => updateQuantity(item.id, false)}>-</button>  
+                        <p>{item.quantity}</p>  
+                        <button   
+                          className="text-lg"   
+                          onClick={() => updateQuantity(item.id, true)}>+</button>  
                       </div>  
                     </div>  
 
