@@ -27,7 +27,7 @@ export default function Header() {
      </div>
 
      <div className='flex py-5 w-28 gap-2 px-2 md:-mt-2 glowing-border rounded bg-[#efdaba]'>
-    <Link href='/admin' className='-mt-3 hover:text-[#b3853b] text-black'><User/></Link>
+    <Link href='/dashboard' className='-mt-3 hover:text-[#b3853b] text-black'><User/></Link>
     <Link href='/wishlist' className='-mt-3 hover:text-[#b3853b] text-black'> <Heart/></Link>
     <Link href='/cart' className='-mt-3 hover:text-[#b3853b] text-black'><ShoppingCart/></Link>
      </div>
