@@ -24,7 +24,8 @@ export default function Header() {
     <li className='hover:text-[#b88f14] hover:underline'><Link href='/products'>Shop</Link></li>
     <li className='hover:text-[#b88f14] hover:underline'><Link href='/about'>About</Link></li>
     <li className='hover:text-[#b88f14] hover:underline'><Link href='/contact'>Contact</Link></li>
-     </div>
+    <li className='hover:text-[#b88f14] hover:underline'><Link href='/dashboard'>Dashboard</Link></li>
+    </div>
 
      <div className='flex py-5 w-28 gap-2 px-2 md:-mt-2 glowing-border rounded bg-[#efdaba]'>
     <Link href='/dashboard' className='-mt-3 hover:text-[#b3853b] text-black'><User/></Link>

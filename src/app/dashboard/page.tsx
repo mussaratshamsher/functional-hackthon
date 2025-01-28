@@ -2,7 +2,7 @@
 import { UserButton } from '@clerk/nextjs'
 import React from 'react'
 
-function Dashboard() {
+function DashBoard() {
   return (
     <div className='flex flex-col justify-center items-center max-w-md border mx-auto bg-[#f4dec6] h-auto 
     my-2 md:my-5 lg:my-10 py-5 lg:py-10 rounded-md shadow-md'>
@@ -21,4 +21,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default DashBoard
