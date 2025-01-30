@@ -11,8 +11,9 @@ import {
 
 export default function Auth() {
   return (
-    <div className='flex max-w-md mx-auto bg-green-200 justify-center items-center my-5 md:my-10
-    p-5 md:p-10'>
+    <div className='container max-w-[1440px] mx-auto'>
+    <div className='flex max-w-md mx-auto bg-[#f4dec6] justify-center items-center my-5 md:my-10
+    p-5 md:p-10 rounded-md shadow-lg'>
 
  <div className=' '> 
 <ClerkProvider>
@@ -32,6 +33,7 @@ export default function Auth() {
   recusandae, amet voluptas enim soluta! Neque, veniam asperiores?</p>
  <h2 className='font-mono my-2 underline text-center'>Email: email@Foodtuck.com</h2>
 </div>
+    </div>
     </div>
   )
 }
