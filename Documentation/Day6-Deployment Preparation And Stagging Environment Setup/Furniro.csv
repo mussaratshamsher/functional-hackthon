@@ -1,0 +1,35 @@
+
+
+#CSV Report of Project
+
+TEST CASE ID,  DESCRIPTION,  STEPS,    EXPECTED RESULT,    ACTUAL RESULT,    STATUS,   REMARKS 
+
+ TC001,    Product Listing, Opend product page to verify, product displayed, displayed, passed, No issues found
+
+ TC002,    Dynamic Route,    Clicked single product,     detail displayed,  displayed, passed, worked greatly
+
+ TC003,  Cart Functionality,  Added item to cart,   item updates correctly, update correctly, passed, worked effeciently
+
+ TC004,  Cart Functionality,  Delete item from cart, deleted item, item deleted,         passed,     worked effeciently
+
+ TC005,  Cart Functionality, Add quantity item of in cart, added quantity , Quantity added, passed,   worked effeciently
+
+ TC006,  Wishlist,       Item added to wishlist, add item, item added,         passed,   worked effeciently
+
+ TC007,  Wishlist & cart,  Items added from cart & wishlist , Total bill update, amount updated, passed, worked effeciently
+                              
+ TC008,  Navigation,    Clicked to each link, open relevent page, opend pages,  passed,  worked seemlessly
+
+ TC009,  Authentication, Clicked icon to open user login page, login by tap on button, logged in , passed, worked greatly
+
+ TC010, Form Validation, filled boxes correctly, Submit successfully, Successfull result, passed,  worked effeciently
+   
+
+
+
+
+
+
+
+
+

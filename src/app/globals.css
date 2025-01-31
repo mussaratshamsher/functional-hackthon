@@ -1,6 +1,8 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -77,40 +79,20 @@ body {
   }
 }
 
-@keyframes borderMove {  
+/* icons animate  */
+
+@keyframes bounce {  
   0%, 100% {  
-      border-color: transparent;  
-  }  
-  25% {  
-      border-color: rgba(184, 143, 20, 0.7);  
+      transform: translateY(0);  
   }  
   50% {  
-      border-color: rgba(184, 143, 20, 1);  
-  }  
-  75% {  
-      border-color: rgba(184, 143, 20, 0.7);  
+      transform: translateY(-10px);  
   }  
 }  
 
-.glowing-border {  
-  position: relative;  
-  padding: 10px; /* Adjust padding as needed */  
-}  
-
-.glowing-border::before {  
-  content: '';  
-  position: absolute;  
-  top: -5px;   
-  left: -5px; 
-  right: -5px;   
-  bottom: -5px; 
-  border-radius: 10px; 
-  border: 2px solid transparent;  
-  animation: borderMove 3s linear infinite; 
-  box-shadow: 0 0 5px rgba(184, 143, 20, 0.75), 0 0 10px rgba(184, 143, 20, 1); /* Glowing effect */  
-  z-index: -1; /* Place the shadow behind the content */  
+.bounce:hover {  
+  animation: bounce 0.5s ease;  
 }
-
 /* styles/globals.css */  
 
 /* WebKit browsers (Chrome, Safari) */  

@@ -44,13 +44,14 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
     return (  
         <div className="text-gray-600 body-font overflow-hidden">  
             <div className="max-w-[1440px] mb-2 md:mb-5 container mx-auto">  
-<div className='grid grid-cols-2 mx-2 md:mx-10 lg:mx-20 my-5 md:my-10'>
+<div className='grid lg:grid-cols-2 mx-2 md:mx-10 lg:mx-20 my-5 md:my-10'>
+
          {/* image Gallery  */}
-                <div className="grid grid-cols-4">  
+                <div className="grid grid-cols-4 ">  
                     {/* Products Gallery */}  
-                <div className='col-span-1 gap-2 '>           
+                <div className='flex md:grid md:col-span-1 gap-2 p-2 md:p-0'>           
                 <Image  src={urlFor(product.image).url()} alt={product.title}  width={500} height={500}   
-                className='rounded-md w-24 h-24'/> 
+                className='rounded-md w-24 h-24 mt-2'/> 
                 <Image  src={urlFor(product.image).url()} alt={product.title}  width={500} height={500}   
                 className='rounded-md w-24 h-24 mt-2 lg:mt-5'/> 
                 <Image  src={urlFor(product.image).url()} alt={product.title}  width={500} height={500}   
@@ -59,7 +60,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 className='rounded-md w-24 h-24 mt-2 lg:mt-5'/> 
             </div>   
              
-        <div className='col-span-3'>  
+        <div className='col-span-4 p-5 md:p-0 md:col-span-3'>  
         <Image src={urlFor(product.image).url()}   
         alt={product.title} width={500} height={500} className='rounded-md' />   
             </div>

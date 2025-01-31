@@ -40,7 +40,8 @@ export default function ProductList({ Data }: { Data: Product[] }) {
 
   return (  
     <div className='container mx-auto max-w-[1440px]'>  
-      <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mx-1 gap-2 md:mx-2 lg:mx-10 py-5 md:gap-3 lg:gap-5'>  
+      <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mx-5 md:mx-5 lg:mx-10 py-5 md:gap-3 
+      lg:gap-5'>  
         {Data.map((product) => (  
           <div key={product.id} className='grid border-none rounded shadow-[#f4dec6] shadow-md w-32 md:60 lg:w-72 hover:bg-slate-50 text-center lg:mb-0 z-10 group'>  
             <Link href={`/productdetails/${product.id}`}>  
