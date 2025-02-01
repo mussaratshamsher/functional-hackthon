@@ -17,7 +17,7 @@ export default async function FurnitureCompo() {
         <div className='container max-w-[1440px]mx-auto'>  
             <p className='text-center'>Share your steps with</p>  
             <h1 className='text-center font-bold text-2xl lg:text-4xl'>#{furnitureData.title}
-            <hr className='border-[#bc9729] border-2 w-32 md:w-60 mx-auto'/></h1>  
+            <hr className='border-[#bc9729] border-2 w-28 md:w-60 mx-auto'/></h1>  
 
             <div className='grid grid-cols-5 px-2 lg:px-10 gap-1 md:gap-3 lg:gap-5'>  
                 {/* grid 1 */}  

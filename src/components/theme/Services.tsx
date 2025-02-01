@@ -10,7 +10,7 @@ export default function Services() {
     <div className='container mx-auto max-w-[1440px] my-5'>
 
       <h1 className='text-sm md:text-3xl md:font-extrabold text-center mt-2 lg:mt-5 my-5'>Our Services
-      <hr className='border-[#bc9729] border-2 w-32 md:w-60 mx-auto'/></h1>
+      <hr className='border-[#bc9729] border-2 w-28 md:w-60 mx-auto'/></h1>
       <h2 className='text-center mb-2 lg:mb-5'>We Provide Quality based Services.</h2>
 
 <div className='grid grid-cols-2 md:grid-cols-4 lg:h-32 p-2 lg:p-5 bg-[#f4dec6] my-2 lg:my-5'>
