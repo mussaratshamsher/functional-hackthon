@@ -48,7 +48,7 @@ export default function Designs({ designsData }: DesignsProps) {
                     </Link>  
                 </div>  
 
-                <div className='grid2 slider md:ml-20 lg:ml-0 pr-5'>  
+                <div className='grid2 slider md:ml-20 lg:ml-0 pr-5 mt-2 md:mt-0'>  
                     <Slider {...settings}>  
                         <div>  
                             <Image src={urlFor(designsData.image1).url()} alt={designsData.title} width={2000} height={2000} className='w-60 md:w-72 lg:w-96 mx-auto md:mx-0'/>  
