@@ -16,8 +16,8 @@ export default function Contact() {
        <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight/> </b>
      <span className='text-gray-700'><Link href='/contact'> Contact </Link></span></p>  
         </div> 
- <h1 className='font-bold text-2xl text-center p-2 md:p-5'>Get In Touch
- <hr className='border-[#bc9729] border-2 w-60 mx-auto'/></h1>
+ <h1 className='font-bold text-base md:text-2xl text-center p-2 md:p-5'>Get In Touch
+ <hr className='border-[#bc9729] border-2 w-28 md:w-40 mx-auto'/></h1>
  <p className='text-gray-500 max-w-md text-center mx-5 md:mx-auto my-2 md:my-5'>For More inforamtion About our products & services please feel free to Drop us 
 an Email. Our staff always be there to help you out. Do not Hesitate!</p>
 <div className='contianer mx-auto md:w-4/5 bg-[#f4dec6] grid md:grid-cols-2 pb-2 md:pb-5 border shadow-lg 

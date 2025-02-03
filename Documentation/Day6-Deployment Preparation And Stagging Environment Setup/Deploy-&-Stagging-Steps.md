@@ -17,7 +17,7 @@
 6. Vercel is choosed as Hoisting Platform to deploy project.
 7. Linked github repositery to vercel by importing project.
 8. Set in environment variables. 
-9.  Deploid project.
+9. Deploid project.
 10. Got result: Project deploid successfly.
 11. Live Link: https://functional-hackthon-jet.vercel.app/
 

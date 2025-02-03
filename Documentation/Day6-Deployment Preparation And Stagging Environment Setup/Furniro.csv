@@ -10,7 +10,7 @@ TEST CASE ID,  DESCRIPTION,  STEPS,    EXPECTED RESULT,    ACTUAL RESULT,    STA
 
  TC003,  Cart Functionality,  Added item to cart,   item updates correctly, update correctly, passed, worked effeciently
 
- TC004,  Cart Functionality,  Delete item from cart, deleted item, item deleted,         passed,     worked effeciently
+ TC004,  Cart Functionality,  Delete item from cart, deleted item, item deleted,         passed,  worked effeciently
 
  TC005,  Cart Functionality, Add quantity item of in cart, added quantity , Quantity added, passed,   worked effeciently
 
