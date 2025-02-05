@@ -1,7 +1,6 @@
 
 import Hero from '@/components/hero/Hero'
 import BrowseRange from '@/components/theme/BrowseRange'
-import Designs from '@/components/theme/Designs'
 import DesignsServer from '@/components/theme/DesignsServer'
 import FurnitureCompo from '@/components/theme/FurnitureCompo'
 import Services from '@/components/theme/Services'

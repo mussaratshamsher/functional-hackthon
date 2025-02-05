@@ -25,8 +25,8 @@ export default function Footer() {
 
 <div>
     <h1 className='text-gray-400 lg:mb-5'>Help</h1>
-    <h1 className='font-bold mb-3'><Link href='/checkout'></Link>Payment Options</h1>
-    <h1 className='font-bold mb-3'><Link href='/auth'></Link>Returns</h1>
+    <h1 className='font-bold mb-3'><Link href='/auth'>Account</Link></h1>
+    <h1 className='font-bold mb-3'><Link href='/faq'>FAQ</Link></h1>
      <h1>Privacy Policies</h1>
 </div>
 
