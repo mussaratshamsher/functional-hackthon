@@ -18,10 +18,10 @@ interface Product {
 
 // Example categories   
 const categories = [   
-    "Table",
-    "Sofa",
-    "Bed",
-    "Chair",  
+    "electronics",   
+    "jewelery",   
+    "men's clothing",   
+    "women's clothing",   
   ];     
 
 export default function CategorySearch() {   
