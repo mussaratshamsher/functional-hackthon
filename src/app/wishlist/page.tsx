@@ -5,6 +5,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";  
 import { Button } from "@/components/ui/button";  
 import Link from "next/link";  
+import { ChevronRight } from "lucide-react";
 
 interface WishlistItem {  
   id: string;  
@@ -62,6 +63,15 @@ export default function Wishlist() {
 
   return (  
     <div className="container mx-auto max-w-[1440px]">  
+    {/* Header */}  
+    <div className='bg-[#f4dec6] w-full h-24 text-center py-7'>  
+            <h1 className='text-xl lg:text-3xl'>Furniro</h1>  
+            <p className='flex justify-center'> 
+
+            <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight /> </b>
+            <span className='text-gray-700'><Link href='/wishlist'> Wishlist </Link></span>  
+            </p>  
+        </div> 
       <div className="flex justify-center items-center py-5 lg:py-20 h-auto mx-5 lg:mx-auto">  
         <div className="grid grid-cols-1 gap-2 lg:gap-8 mx-auto">  
          

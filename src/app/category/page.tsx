@@ -4,7 +4,7 @@ import React, { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";   
 import { Card, CardContent } from "@/components/ui/card";   
 import Link from "next/link";   
-import { Loader, SearchIcon } from "lucide-react";   
+import { ChevronRight, Loader, SearchIcon } from "lucide-react";   
 import Image from "next/image";   
 
 // Define the Product interface   
@@ -55,6 +55,17 @@ export default function CategorySearch() {
   };   
 
   return (   
+<div className="container max-w-[1440px] mx-auto">
+  {/* Header */}  
+  <div className='bg-[#f4dec6] w-full h-24 text-center py-7'>  
+            <h1 className='text-xl lg:text-3xl'>Furniro</h1>  
+            <p className='flex justify-center'> 
+
+            <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight /> </b>
+            <span className='text-gray-700'><Link href='/category'> Category </Link></span>  
+            </p>  
+        </div> 
+        {/* main page  */}
     <div className="flex flex-col h-full w-full max-w-6xl mx-auto p-4 md:p-6">   
       <header className="flex flex-col items-center mb-6">   
         <h1 className=" text-base md:text-3xl font-bold mb-2">Product Category Search
@@ -63,7 +74,7 @@ export default function CategorySearch() {
           Find products by selecting a category.   
         </p>
 
-        <form className="relative w-full max-w-md mb-6 border border-[#bc9729] p-2 md:p-4 rounded-lg shadow-lg " onSubmit={handleSearch}>   
+        <form className="relative w-full max-w-md mb-6 border border-[#a58629] p-2 md:p-4 rounded-lg shadow-lg " onSubmit={handleSearch}>   
           <select value={category} onChange={(e) => setCategory(e.target.value)} className="pr-10">   
             <option value="">Select a category</option>   
             {categories.map((cat) => (   
@@ -112,6 +123,8 @@ export default function CategorySearch() {
           ))}   
         </div>   
       )}   
-    </div>   
+    </div> 
+     
+    </div>
   );   
 }

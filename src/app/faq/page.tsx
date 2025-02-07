@@ -11,7 +11,7 @@ export default function page() {
             <h1 className='text-xl lg:text-3xl'>Furniro</h1>  
             <p className='flex justify-center'>  
             <Link href='/' className='font-bold'>Home</Link><b> <ChevronRight/> </b>
-            <span className='text-gray-700'><Link href='/faq'> FAQ</Link></span>  
+            <span className='text-gray-700'><Link href='/faq'> FAQ's</Link></span>  
             </p>  
         </div> 
 

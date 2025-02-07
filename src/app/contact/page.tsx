@@ -16,6 +16,7 @@ export default function Contact() {
        <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight/> </b>
      <span className='text-gray-700'><Link href='/contact'> Contact </Link></span></p>  
         </div> 
+        {/* Main content  */}
  <h1 className='font-bold text-base md:text-2xl text-center p-2 md:p-5'>Get In Touch
  <hr className='border-[#bc9729] border-2 w-28 md:w-40 mx-auto'/></h1>
  <p className='text-gray-500 max-w-md text-center mx-5 md:mx-auto my-2 md:my-5'>For More inforamtion About our products & services please feel free to Drop us 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 interface CartItem {
   id: string;
@@ -63,6 +64,15 @@ export default function CartPage() {
 
   return (
     <div className="container mx-auto max-w-[1440px]">
+      {/* Header */}  
+      <div className='bg-[#f4dec6] w-full h-24 text-center py-7'>  
+            <h1 className='text-xl lg:text-3xl'>Furniro</h1>  
+            <p className='flex justify-center'> 
+
+            <Link href='/' className='font-bold'> Home </Link><b> <ChevronRight /> </b>
+            <span className='text-gray-700'><Link href='/cart'> Cart </Link></span>  
+            </p>  
+        </div> 
       <div className="flex justify-center items-center py-5 lg:py-20 h-auto mx-5 lg:mx-auto lg:w-3/5 w-4/5">
         {/*----===== CART =====----*/}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
