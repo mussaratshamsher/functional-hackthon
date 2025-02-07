@@ -1,10 +1,10 @@
 "use client"
-import { Heart, Logs, ShoppingCart, User } from 'lucide-react'  
+
+import { Heart, Logs, Search, ShoppingCart, User } from 'lucide-react'  
 import Image from 'next/image'  
 import Link from 'next/link'  
 import React, { useState } from 'react'  
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"  
-
 import logo from '../../../public/images/logo.png'  
 import ModeToggle from '../theme/ModeToggle'  
 
@@ -36,15 +36,19 @@ export default function Header() {
         </div>  
 
         <div className='flex w-28 gap-0 md:gap-2 px-0 md:px-2 -mt-1'>  
+        <Link href='/category' className='bounce flex items-center justify-center p-2 transition duration-500
+       hover:text-[#b3853b] hover:underline'><Search /></Link> 
       <Link href='/auth' className='bounce flex items-center justify-center p-2 transition duration-500
-       text-black hover:text-[#b3853b] hover:underline'><User /></Link>  
+        hover:text-[#b3853b] hover:underline'><User /></Link>  
       <Link href='/wishlist' className='bounce flex items-center justify-center p-2 transition duration-500
-       text-black hover:text-[#b3853b] hover:underline'><Heart /></Link>  
+        hover:text-[#b3853b] hover:underline'><Heart /></Link>  
       <Link href='/cart' className='bounce flex items-center justify-center p-2 transition duration-500
-       text-black hover:text-[#b3853b] hover:underline'><ShoppingCart /></Link>  
+       hover:text-[#b3853b] hover:underline'><ShoppingCart /></Link>  
+        
         </div>  
-        <ModeToggle/>  
-
+        <div className='md:-mt-3'>
+          <ModeToggle/>
+         </div>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>  
           <SheetTrigger onClick={handleOpen} className='md:hidden'>  
             <Logs />  

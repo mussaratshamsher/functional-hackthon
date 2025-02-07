@@ -26,10 +26,10 @@ interface Product {
 
 const productDetails = async (id: string): Promise<Product | null> => {  
     const query = `*[_type == "product" && id == $id][0] {  
-        title, name, id, image, description, price, details, yellowstars, graystars,   
-        reviews, tags, category   
-    }`;  
-    return await client.fetch(query, { id });  
+        title, name, id, image, description, price, details, 
+        yellowstars, graystars, reviews, tags }`;  
+
+      return await client.fetch(query, { id });  
 };  
 
 const ProductDetails = async ({ params }: { params: { id: string } }) => {  
@@ -69,9 +69,8 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                  
                 {/* Details */}  
                 <div className="w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">  
-                    <h1 className="text-gray-900 text-3xl title-font font-bold mb-1">{product.title}</h1>  
-                    <h2 className="text-base title-font text-gray-500 tracking-widest">{product.category}</h2>  
-                    <h2 className="text-base title-font tracking-widest">{product.tags}</h2>  
+                <h1 className="text-gray-900 text-3xl title-font font-bold mb-1">{product.title}</h1>  
+                <h2 className="text-base title-font tracking-widest">{product.tags}</h2>  
 
                     <div className="flex py-2">  
                         <div className='flex'>  
