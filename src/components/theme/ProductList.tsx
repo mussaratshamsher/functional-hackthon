@@ -43,21 +43,23 @@ export default function ProductList({ Data }: { Data: Product[] }) {
       <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mx-5 md:mx-5 lg:mx-10 py-5 md:gap-3 
       lg:gap-5'>  
         {Data.map((product) => (  
-          <div key={product.id} className='grid border-none rounded shadow-[#f4dec6] shadow-md w-32 md:60 lg:w-72 hover:bg-slate-50 text-center lg:mb-0 z-10 group'>  
+          <div key={product.id} className='grid border-none rounded shadow-[#f4dec6] shadow-md w-32 md:60 lg:w-72
+           hover:bg-slate-50 text-center lg:mb-0 z-10 group'>  
             <Link href={`/productdetails/${product.id}`}>  
-              <Image src={urlFor(product.image).url()} alt={product.title} width={500} height={500} className='w-28 h-28 md:w-60 md:h-60 lg:w-[270px] lg:h-72 m-2'/>  
+              <Image src={urlFor(product.image).url()} alt={product.title} width={500} height={500} 
+              className='w-28 h-28 md:w-60 md:h-60 lg:w-[270px] lg:h-72 m-2'/>  
               <h2 className='text-xs lg:text-sm'>{product.title}</h2>  
               <p className='font-medium text-sm lg:font-bold'>${product.price}</p>  
             </Link>   
             <div className='grid gap-1 md:flex md:justify-evenly mb-1 md:mb-2'>   
               <Link href='/cart'>  
                 <Button onClick={() => handleAddToCart(product)}>  
-                  <FaCartShopping className='hover:bg-black/60 hover:animate-pulse'/> Add to Cart  
+                  <FaCartShopping className='hover:bg-black/60 tracking-tighter text-xs hover:animate-pulse'/> Add to Cart  
                 </Button>  
               </Link>  
               <Link href='/wishlist'>   
                 <Button onClick={() => handleAddToWishlist(product)}>  
-                  <FaHeart className='hover:bg-black/60 hover:animate-pulse'/> Wishlist  
+                  <FaHeart className='hover:bg-black/60 tracking-tighter text-xs hover:animate-pulse'/> Wishlist  
                 </Button>  
               </Link>   
             </div>  
