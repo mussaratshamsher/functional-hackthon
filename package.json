@@ -35,6 +35,7 @@
     "sanity": "^3.71.0",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
+    "stripe": "^17.6.0",
     "styled-components": "^6.1.14",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
