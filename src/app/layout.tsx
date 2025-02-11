@@ -4,6 +4,14 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 import './globals.css'
 const geistSans = localFont({
@@ -33,10 +41,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  
+  <ClerkProvider>
     <html>
       <head>
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"></link>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -47,10 +56,23 @@ export default function RootLayout({
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange>
-          
+        <div className="container max-w-[1440px] mx-auto">
+         <header className="flex justify-between items-center p-4 text-[#bc9729] bg-white">
+            
+              <h1 className="text-1xl md:text-3xl font-bold hover:animate-pulse"><span className="text-black text-4xl">W</span>elcome</h1>
+            
+            <div className="font-bold text-1xl md:text-2xl hover:animate-pulse">
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </div>
+          </header> 
+          <hr className='mx-10'/> <hr className='mx-10'/>
         <Header />
-        
-        
+        </div>
         {children}
 
         <Footer />
@@ -58,6 +80,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-    
+    </ClerkProvider>
   );
 }

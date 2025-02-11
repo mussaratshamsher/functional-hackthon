@@ -15,7 +15,7 @@ export default function page() {
             </p>  
         </div> 
 
-<h1 className='text-center text-base text-bold md:text-4xl mt-5 md:mt-20 font-bold' id='myfont'>
+<h1 className='mytext text-center text-base text-bold md:text-4xl mt-5 md:mt-20 font-bold'>
     Questions! Look Here..<hr className='border-[#bc9729] border-2 w-40 md:w-96 mx-auto'/></h1>
 <p className='text-center md:mt-2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 

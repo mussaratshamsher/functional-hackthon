@@ -78,6 +78,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+/* google font  */
+.mytext {
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /* icons animate  */
 

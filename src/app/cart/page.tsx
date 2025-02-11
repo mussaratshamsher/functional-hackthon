@@ -78,7 +78,7 @@ export default function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
           {/*----===== PRODUCTS =====----*/}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Cart 
+            <h2 className="mytext text-2xl font-semibold text-gray-800 mb-6">Cart 
             <hr className='border-[#bc9729] border-2 w-14'/></h2>
             <div className="space-y-6">
               {cartItems.length > 0 ? (

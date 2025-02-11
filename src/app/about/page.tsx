@@ -28,7 +28,7 @@ export default async function about() {
             </p>  
         </div> 
         {/* main page  */}
-     <h1 className='text-2xl md:text-3xl font-bold text-center py-5'> {aboutData.title}
+     <h1 className='mytext text-2xl md:text-3xl font-bold text-center py-5'> {aboutData.title}
      <hr className='border-[#bc9729] border-2 w-60 mx-auto'/></h1>
 
 <div className='grid md:grid-cols-2 max-w-screen-lg md:gap-5 lg:gap-10 mx-auto'>

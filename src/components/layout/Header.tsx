@@ -38,8 +38,6 @@ export default function Header() {
         <div className='flex w-28 gap-0 md:gap-2 px-0 md:px-2 -mt-1'>  
         <Link href='/category' className='bounce flex items-center justify-center p-2 transition duration-500
        hover:text-[#b3853b] hover:underline'><Search /></Link> 
-      <Link href='/auth' className='bounce flex items-center justify-center p-2 transition duration-500
-        hover:text-[#b3853b] hover:underline'><User /></Link>  
       <Link href='/wishlist' className='bounce flex items-center justify-center p-2 transition duration-500
         hover:text-[#b3853b] hover:underline'><Heart /></Link>  
       <Link href='/cart' className='bounce flex items-center justify-center p-2 transition duration-500
@@ -55,18 +53,10 @@ export default function Header() {
           </SheetTrigger>  
           <SheetContent>  
             <ul>  
-              <li>  
-                <Link href='/' onClick={handleClose} className='hover:underline'>Home</Link>  
-              </li>  
-              <li>  
-                <Link href='/products' onClick={handleClose} className='hover:underline'>Shop</Link>  
-              </li>  
-              <li>  
-                <Link href='/about' onClick={handleClose} className='hover:underline'>About</Link>  
-              </li>  
-              <li>  
-                <Link href='/contact' onClick={handleClose} className='hover:underline'>Contact</Link>  
-              </li>  
+       <li><Link href='/' onClick={handleClose} className='hover:underline'>Home</Link></li>  
+       <li><Link href='/products' onClick={handleClose} className='hover:underline'>Shop</Link></li>  
+       <li><Link href='/about' onClick={handleClose} className='hover:underline'>About</Link></li>  
+       <li><Link href='/contact' onClick={handleClose} className='hover:underline'>Contact</Link></li>  
             </ul>  
           </SheetContent>  
         </Sheet>  

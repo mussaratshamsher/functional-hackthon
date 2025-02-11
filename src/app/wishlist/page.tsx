@@ -75,7 +75,7 @@ export default function Wishlist() {
       <div className="flex justify-center items-center py-5 lg:py-20 h-auto mx-5 lg:mx-auto">  
         <div className="grid grid-cols-1 gap-2 lg:gap-8 mx-auto">  
          
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Wishlist   
+          <h2 className="mytext text-2xl font-semibold text-gray-800 mb-6">Wishlist   
           <hr className='border-[#bc9729] border-2 w-24'/></h2>  
             <div className="space-y-2">  
              {wishlistItems.length> 0 ? (  
