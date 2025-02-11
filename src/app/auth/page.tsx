@@ -50,7 +50,7 @@ export default function Auth() {
  <h2 className='font-serif underline text-center'>Email: email@furniro.com</h2>
  
         <div className='flex gap-2 mt-2 underline'> <p> Visit our social sites:</p>
-          <Facebook className='hover:text-[#bc9729]'/> 
+        <Facebook className='hover:text-[#bc9729]'/> 
         <Twitter className='hover:text-[#bc9729]'/> 
         <Instagram className='hover:text-[#bc9729]'/> <Youtube className='hover:text-[#bc9729]'/>
         </div>

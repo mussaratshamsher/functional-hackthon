@@ -5,8 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FaCartShopping } from "react-icons/fa6";  
 import Image from 'next/image';  
 import { FaHeart } from 'react-icons/fa';  
-import Link from 'next/link';  
-import { urlFor } from '@/sanity/lib/image';  
+import Link from 'next/link';    
 
 interface Product {  
   title: string;  
@@ -46,11 +45,12 @@ export default function ProductList({ Data }: { Data: Product[] }) {
           <div key={product.id} className='grid border-none rounded shadow-[#f4dec6] shadow-md w-32 md:60 lg:w-72
            hover:bg-slate-50 text-center lg:mb-0 z-10 group'>  
             <Link href={`/productdetails/${product.id}`}>  
-              <Image src={urlFor(product.image).url()} alt={product.title} width={500} height={500} 
+              <Image src={product.image} alt={product.title} width={500} height={500} 
               className='w-28 h-28 md:w-60 md:h-60 lg:w-[270px] lg:h-72 m-2'/>  
               <h2 className='text-xs lg:text-sm'>{product.title}</h2>  
               <p className='font-medium text-sm lg:font-bold'>${product.price}</p>  
-            </Link>   
+            </Link> 
+            {/* add to cart & wishlist    */}
             <div className='grid gap-1 md:flex md:justify-evenly mb-1 md:mb-2'>   
               <Link href='/cart'>  
                 <Button onClick={() => handleAddToCart(product)}>  

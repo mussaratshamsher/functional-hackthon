@@ -19,11 +19,13 @@ export default async function Products() {
     quantity: number;
   }
        
-    const query = `*[_type == "product"]{  
-        title, name, id, image, description, price  
-    }`;   
-
-    const Data:Product[] = await client.fetch(query);   
+    // const query = `*[_type == "product"]{  
+    //     title, name, id, image , description, price  
+    // }`;   
+    // const Data:Product[] = await client.fetch(query);   
+    const response = await fetch(`https://67aae21c65ab088ea7e7cba7.mockapi.io/products`);    
+    const Data:Product[] =  await response.json();   
+      console.log(Data);
       return ( 
          
         <div className='container mx-auto max-w-[1440px]'>  
