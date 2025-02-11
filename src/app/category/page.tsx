@@ -71,7 +71,7 @@ export default function CategorySearch() {
         <h1 className=" text-base md:text-3xl font-bold mb-2">Search Product by category
         <hr className='border-[#bc9729] border-2 w-48 md:w-96 mx-auto'/></h1>   
 
-        <form className="relative w-full max-w-md mb-6 border border-[#a58629] p-2 md:p-4 rounded-lg shadow-lg " onSubmit={handleSearch}>   
+        <form className="relative w-full max-w-md mb-6 border border-[#a58629] p-2 md:mt-5 md:p-4 rounded-lg shadow-lg " onSubmit={handleSearch}>   
           <select value={category} onChange={(e) => setCategory(e.target.value)} className="pr-10">   
             <option value="">Select a category</option>   
             {categories.map((cat) => (   
