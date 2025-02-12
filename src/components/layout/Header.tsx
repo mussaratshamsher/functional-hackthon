@@ -29,10 +29,11 @@ export default function Header() {
         </div>  
 
         <div className='hidden md:flex md:gap-7 list-none'>   
-          <li className='text-[#b88f14] hover:underline'><Link href='/'>Home</Link></li>  
-          <li className='hover:text-[#b88f14] hover:underline'><Link href='/products'>Shop</Link></li>  
-          <li className='hover:text-[#b88f14] hover:underline'><Link href='/about'>About</Link></li>  
-          <li className='hover:text-[#b88f14] hover:underline'><Link href='/contact'>Contact</Link></li>  
+        <li className='text-[#b88f14] hover:underline'><Link href='/'>Home</Link></li>  
+        <li className='hover:text-[#b88f14] hover:underline'><Link href='/products'>Shop</Link></li>  
+        <li className='hover:text-[#b88f14] hover:underline'><Link href='/about'>About</Link></li>  
+        <li className='hover:text-[#b88f14] hover:underline'><Link href='/contact'>Contact</Link></li>
+        <li className='hover:text-[#b88f14] hover:underline'><Link href='/dashboard'>Dashboard</Link></li>  
         </div>  
 
         <div className='flex w-28 gap-0 md:gap-2 px-0 md:px-2 -mt-1'>  
@@ -57,7 +58,8 @@ export default function Header() {
        <li><Link href='/products' onClick={handleClose} className='hover:underline'>Shop</Link></li>  
        <li><Link href='/about' onClick={handleClose} className='hover:underline'>About</Link></li>  
        <li><Link href='/contact' onClick={handleClose} className='hover:underline'>Contact</Link></li>  
-            </ul>  
+       <li className='hover:text-[#b88f14] hover:underline'><Link href='/dashboard'>Dashboard</Link></li>  
+       </ul>  
           </SheetContent>  
         </Sheet>  
 
